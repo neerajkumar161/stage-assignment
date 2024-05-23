@@ -1,0 +1,1 @@
+### Create scripts to insert data in mongodb for User, Movie and TVShow initially
