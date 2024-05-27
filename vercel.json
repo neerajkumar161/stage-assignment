@@ -3,22 +3,15 @@
   "name": "my-nest-app",
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "build": {
-          "command": "pnpm run build"
-        },
-        "start": {
-          "command": "pnpm run start:dev"
-        }
-      }
+      "src": "main.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "src/main.ts",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     }
   ]
 }
