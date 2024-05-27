@@ -17,7 +17,7 @@
     "test:watch": "cross-env NODE_ENV=dev jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "cross-env NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --detectOpenHandles --forceExit",
+    "test:e2e": "jest --config ./test/jest-e2e.json --runInBand --detectOpenHandles --forceExit",
     "add:users": "node dist/scripts/add-users.js",
     "add:movies": "node dist/scripts/add-movies.js",
     "add:tvshows": "node dist/scripts/add-tv-shows.js"
@@ -52,6 +52,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "jest": "^29.5.0",
+    "mongodb-memory-server": "^9.2.0",
     "prettier": "^3.0.0",
     "source-map-support": "^0.5.21",
     "supertest": "^6.3.3",

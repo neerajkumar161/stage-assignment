@@ -40,6 +40,13 @@ $ pnpm run test:e2e
 ## Environment Variables
  - Check .env.dev and .env.test for variables for MongoURI.
 
+## Users, Movie and TVShows added on Prod DB, use these ids to add to User MyList
+```sh
+Users: [6654135df8b78768eae0296b, 6654135df8b78768eae0296d]
+Movies: [665413819d2ed6292ca16064, 665413819d2ed6292ca16065, 665413819d2ed6292ca16066]
+TVShows: [6654138bd9423b0d534ffaf0, 6654138bd9423b0d534ffaf3, 6654138bd9423b0d534ffaf6]
+```
+
 ## Requirements
  - Ensure to install mongodb and redis which can run locally on default port. You can use docker and expose default port. 
 ## Endpoints
@@ -55,7 +62,7 @@ POST /my-list/add/list
 - Adds a movie or TV show to the user's list.
 **Headers:**
 - `Content-Type: application/json`
-- `userId: 664f2760cba1d0240c29e237`
+- `userId: 6654135df8b78768eae0296b`
 **Request Body:**
 ```json
 {
@@ -73,7 +80,7 @@ POST /my-list/remove/list
 - Removes a movie or TV show from the user's list.
 **Headers:**
 - `Content-Type: application/json`
-- `userId: 664f2760cba1d0240c29e235`
+- `userId: 6654135df8b78768eae0296b`
 **Request Body:**
 
 ```json
@@ -96,7 +103,7 @@ GET /my-list/user/list?page=1&limit=10
 - Retrieves the items in the user's list with pagination and caching optimizations.
 
 **Headers:**
-- `userId: 664f2760cba1d0240c29e235`
+- `userId: 6654135df8b78768eae0296b`
 
 **Query Parameters:**
 - `page (optional) - Page number for pagination. Default is 1.`

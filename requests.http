@@ -1,17 +1,16 @@
 ### Add List to the MyList
-POST http://localhost:3000/my-list/add/list
+POST https://stage-bharat.vercel.app/my-list/add/list
 Content-Type: application/json
-# userId: 664f2760cba1d0240c29e237
-userId: 664f2760cba1d0240c29e23
-
+userId: 6654135df8b78768eae0296b
+# TVShow or Movie
 {
-  "contentId": "664f2790bd0129b14fe238ae",
-  "contentType": "TVShow"
+  "contentId": "6654138bd9423b0d534ffaf0",
+  "contentType": "TVShow"  
 }
 
 
 ### Remove List from the MyList
-POST http://localhost:3000/my-list/remove/list
+POST https://stage-bharat.vercel.app/my-list/remove/list
 Content-Type: application/json
 userId: 664f2760cba1d0240c29e235
 
@@ -21,5 +20,6 @@ userId: 664f2760cba1d0240c29e235
 
 
 ### Get User MyList with Some optimisation like caching and pagination
-GET http://localhost:3000/my-list/user/list?page=1&limit=10
-userId: 664f2760cba1d0240c29e235
+# GET http://localhost:3000/my-list/user/list?page=1&limit=10
+GET https://stage-bharat.vercel.app/my-list/user/list?page=1&limit=10
+userId: 6654135df8b78768eae0296b
