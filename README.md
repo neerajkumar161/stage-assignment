@@ -50,6 +50,7 @@ TVShows: [6654138bd9423b0d534ffaf0, 6654138bd9423b0d534ffaf3, 6654138bd9423b0d53
 ## Requirements
  - Ensure to install mongodb and redis which can run locally on default port. You can use docker and expose default port. 
 ## Endpoints
+  - #### See reqeusts.http file in root directory
 
 ### 1. Add Item to My List
 
@@ -108,6 +109,7 @@ GET /my-list/user/list?page=1&limit=10
 **Query Parameters:**
 - `page (optional) - Page number for pagination. Default is 1.`
 - `limit (optional) - Number of items per page. Default is 10.`
+
 **Response:**
 - `200 OK - List of items in the user's list.`
 - `400 Bad Request - Invalid request parameters.`
