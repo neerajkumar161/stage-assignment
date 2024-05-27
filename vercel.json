@@ -3,7 +3,7 @@
   "name": "my-nest-app",
   "builds": [
     {
-      "src": "main.ts",
+      "src": "src/main.ts",
       "use": "@vercel/node"
     }
   ],
