@@ -4,10 +4,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { CurrentUserInterceptor } from '../interceptor/current-user-interceptor';
 import { MyListController } from './my-list.controller';
 import { MyListService } from './my-list.service';
-import { MovieSchema } from './schemas/Movie.schema';
-import { UserSchema } from './schemas/User.schema';
+import { MovieSchema } from './schemas/movie.schema';
 import { MyListSchema } from './schemas/my-list.schema';
 import { TvShowSchema } from './schemas/tv-show.schema';
+import { UserSchema } from './schemas/user.schema';
 
 @Module({
   imports: [
