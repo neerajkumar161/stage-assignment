@@ -1,10 +1,10 @@
-import { CacheModule } from '@nestjs/cache-manager';
+import { CacheModule, CacheStore } from '@nestjs/cache-manager';
 import { Module, ValidationPipe } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_PIPE } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
 import { redisStore } from 'cache-manager-redis-store';
-import type { RedisClientOptions } from 'redis';
+import { RedisClientOptions } from 'redis';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MyListModule } from './my-list/my-list.module';
@@ -21,13 +21,18 @@ import { MyListModule } from './my-list/my-list.module';
         uri: configService.get('MONGO_URI'),
       }),
     }),
-    CacheModule.register<RedisClientOptions>({
+    CacheModule.registerAsync<RedisClientOptions>({
       isGlobal: true,
-      ttl: 300,
-      // @ts-ignore
-      store: redisStore,
-      host: 'localhost',
-      port: 6379,
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        socket: {
+          host: configService.get('REDIS_HOST'),
+          port: configService.get('REDIS_PORT'),
+        },
+        ttl: 300,
+        store: redisStore as unknown as CacheStore,
+        password: configService.get('REDIS_PASSWORD'),
+      }),
     }),
   ],
   controllers: [AppController],
